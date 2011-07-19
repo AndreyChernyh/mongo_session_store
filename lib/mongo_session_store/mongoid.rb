@@ -38,7 +38,7 @@ module ActionController
         end
 
         def find_session(id)
-          @@session_class.find(id) ||
+          @@session_class.where(:id => id).first ||
             @@session_class.new(:id=>id)
         end
 
